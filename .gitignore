@@ -1,0 +1,7 @@
+/node_modules
+*.swp
+tags
+.DS_Store
+*.zip
+.idea/
+.cache/
