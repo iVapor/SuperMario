@@ -1,13 +1,24 @@
 class SceneTitle extends GuaScene{
     constructor(game) {
         super(game)
-        var label = GuaLabel.new(game, 'hello')
+        let label = GuaLabel.new(game, 'hello')
         this.addElement(label)
 
+        let w = GuaAnimation.new(game)
+        w.x = 20
+        w.y = 30
+        this.w = w
+        this.addElement(w)
+        this.setupInputs()
     }
-    draw() {
-        super.draw()
-        // draw labels
-        // this.game.context.fillText('按 k 开始游戏', 100, 190)
+    setupInputs(){
+        let self = this
+        self.game.registerAction('a', function () {
+            self.w.move(-2)
+         })
+        self.game.registerAction('d', function () {
+            self.w.move(2)
+         })
     }
+
 }

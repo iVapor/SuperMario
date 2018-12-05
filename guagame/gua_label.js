@@ -8,7 +8,6 @@ class GuaLabel {
     }
     draw() {
         // draw labels
-        log('draw labels', this.game, this.text)
         this.game.context.fillText(this.text, 100, 190)
     }
     update(){

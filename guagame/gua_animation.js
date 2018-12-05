@@ -3,7 +3,7 @@ class GuaAnimation {
         this.game = game
         //为了省事，在这里硬编码一套动画
         this.frames = []
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 8; i++) {
             let name = `run${i}`
             let t = game.textureByName(name)
             this.frames.push(t)
@@ -20,10 +20,13 @@ class GuaAnimation {
         if (this.frameCount === 0) {
             this.frameCount = 3
             this.frameIndex = (this.frameIndex + 1) % this.frames.length
-            //切换当前的图片
+            this.texture = this.frames[this.frameIndex]
         }
     }
     draw(){
-
+        this.game.drawImage(this)
+    }
+    move(x){
+        this.x += x
     }
 }

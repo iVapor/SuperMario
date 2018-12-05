@@ -8,8 +8,7 @@ class GuaImage {
         this.h = this.texture.height
     }
     static new(game, name) {
-        var i = new this(game, name)
-        return i
+        return new this(game, name)
     }
     draw() {
         this.game.drawImage(this)
