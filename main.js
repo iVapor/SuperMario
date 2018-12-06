@@ -57,8 +57,23 @@ var __main = function() {
         run5:'img/run/run5.png',
         run6:'img/run/run6.png',
         run7:'img/run/run7.png',
+        // 多状态动画
+        // 递名片
+        card0: 'img/card/card0.png',
+        card1: 'img/card/card1.png',
+        card2: 'img/card/card2.png',
+        card3: 'img/card/card3.png',
+        card4: 'img/card/card4.png',
+        // 脱衣服
+        cloth0: 'img/cloth/cloth0.png',
+        cloth1: 'img/cloth/cloth1.png',
+        cloth2: 'img/cloth/cloth2.png',
+        cloth3: 'img/cloth/cloth3.png',
+        cloth4: 'img/cloth/cloth4.png',
+        cloth5: 'img/cloth/cloth5.png',
+        cloth6: 'img/cloth/cloth6.png',
     }
-    var game = GuaGame.instance(30, images, function(g){
+    var game = GuaGame.instance(8, images, function(g){
         var s = SceneTitle.new(g)
         // var s = Scene.new(g)
         g.runWithScene(s)
