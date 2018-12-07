@@ -1,9 +1,11 @@
 class SceneTitle extends GuaScene{
     constructor(game) {
         super(game)
-        let label = GuaLabel.new(game, 'hello')
+        let label = GuaLabel.new(game, 'hello from clement')
         this.addElement(label)
 
+        let cave = GuaImage.new(game, 'sky')
+        this.addElement(cave)
         let w = GuaAnimation.new(game)
         w.x = 20
         w.y = 30

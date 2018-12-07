@@ -17,10 +17,12 @@ class GuaAnimation {
             this.animations['cloth'].push(t)
         }
         this.animationName = 'card'
-        log('this.frames', this.frames())
         this.texture = this.frames()[0]
+        this.w = this.texture.width
+        this.h = this.texture.height
         this.frameIndex = 0
         this.frameCount = 20
+
         this.flipX = false
     }
     static new(game) {
@@ -38,12 +40,22 @@ class GuaAnimation {
         }
     }
     draw() {
+        let context = this.game.context
         if (this.flipX) {
-
+            context.save();
+            let x = this.x + this.w / 2
+            context.translate(x, 0);
+            context.scale(-1, 1);
+            context.translate(-x, 0);
+            // Draw the image
+            context.drawImage(this.texture, 0, 0);
+            context.restore();
+        } else {
+            context.drawImage(this.texture, this.x, this.y)
         }
-        this.game.drawImage(this)
     }
     move(x, keyStatus){
+        this.flipX = x < 0
         this.x += x
         log('event', keyStatus)
         var animationNames = {
